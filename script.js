@@ -41,7 +41,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (cvButton) {
         cvButton.addEventListener('click', function(e) {
             e.preventDefault();
-            alert('CV download functionality will be implemented when deployed. For now, please contact me via email to request my CV.');
+            window.location.href = 'Pegah_CV.pdf';
+            // alert('CV download functionality will be implemented when deployed. For now, please contact me via email to request my CV.');
         });
     }
     
