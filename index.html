@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pegah Motaharinezhad - Academic Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -18,8 +18,8 @@
                     <li><a href="#research">Research</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#education">Education</a></li>
-                    <!-- <li><a href="#experience">Experience</a></li> -->
-                    <!-- <li><a href="#skills">Skills</a></li> -->
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#publication">Publications</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <div class="theme-toggle">
@@ -36,7 +36,7 @@
         </div>
     </header>
 
-    <section id="about" class="hero-clean">
+    <section id="hero" class="hero-clean">
         <div class="container">
             <div class="profile-container">
                 <!-- Profile image can be added here -->
@@ -44,12 +44,19 @@
                 <div class="profile-text">
                     <h1>Pegah Motaharinezhad</h1>
                     <h2>Computer Science</h2>
-                    <!-- <p>Specializing in NLP, Reinforcement Learning, Deep Learning, and Machine Learning</p> -->
                     <div class="hero-buttons">
                         <a href="#contact" class="btn primary-btn">Contact Me</a>
                         <a href="Pegah_CV.pdf" class="btn secondary-btn" id="cv-download">Download CV</a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section-padding">
+        <div class="container content-container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
             </div>
             <div class="about-content animate-on-scroll">
                 <p>I am a Computer Science graduate with a strong foundation in Natural Language Processing (NLP), Reinforcement Learning, Deep Learning, and Machine Learning. My academic journey has equipped me with both theoretical knowledge and practical skills in developing AI-driven solutions across various domains.</p>
@@ -111,7 +118,7 @@
         </div>
     </section>
 
-    <section id="projects" class="section-padding">
+    <!-- <section id="projects" class="section-padding">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Selected Projects</h2>
@@ -164,6 +171,53 @@
                 </div>
             </div>
         </div>
+    </section> -->
+
+        <section id="projects" class="section-padding">
+        <div class="container content-container">
+            <div class="section-header">
+                <h2 class="section-title">Selected Projects</h2>
+            </div>
+            <div class="projects-list">
+                <div class="project-item animate-on-scroll">
+                    <h3 class="project-title">Enhancing Biomedical Relation Extraction</h3>
+                    <p class="project-subtitle">Bachelor's Project</p>
+                    <p class="project-description">Developed a BERT-based NLP pipeline to detect Drug-Drug Interactions (DDIs) using the DDI Extraction 2013 dataset. The project focused on drug name entity recognition (DNER) and DDI classification, demonstrating the effectiveness of transformer models in biomedical relation extraction tasks.</p>
+                    <div class="project-tags">
+                        <span>NLP</span>
+                        <span>BERT</span>
+                        <span>Biomedical</span>
+                    </div>
+                </div>
+                <div class="project-item animate-on-scroll">
+                    <h3 class="project-title">LLM-Aware Search and Ranking</h3>
+                    <p class="project-description">Built a semantic search pipeline integrating sentence embeddings and KNN-based ranking for LLM-enhanced applications. This project showcases my ability to work with modern NLP techniques and develop practical applications that leverage the power of large language models.</p>
+                    <div class="project-tags">
+                        <span>LLM</span>
+                        <span>Semantic Search</span>
+                        <span>Embeddings</span>
+                    </div>
+                </div>
+                <div class="project-item animate-on-scroll">
+                    <h3 class="project-title">Amazon Product Crawler and Indexer</h3>
+                    <p class="project-description">Developed a Selenium-based web scraper to extract structured product data from Amazon. The extracted data was indexed and visualized using Elasticsearch and Kibana dashboards, demonstrating my skills in web scraping, data processing, and visualization.</p>
+                    <div class="project-tags">
+                        <span>Web Scraping</span>
+                        <span>Elasticsearch</span>
+                        <span>Data Visualization</span>
+                    </div>
+                </div>
+                <div class="project-item animate-on-scroll">
+                    <h3 class="project-title">Multilingual Search Engine</h3>
+                    <p class="project-description">Implemented an information retrieval system for English and Persian datasets with customizable query processing and scoring. This project highlights my understanding of core information retrieval concepts and ability to work with multilingual data.</p>
+                    <div class="project-tags">
+                        <span>Information Retrieval</span>
+                        <span>TF-IDF</span>
+                        <span>Multilingual</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="education" class="section-padding">
@@ -201,6 +255,33 @@
                 </div>
             </div>
 
+            <!-- <div class="section-header" style="margin-top: 4rem;">
+                <h2 class="section-title">Publications</h2>
+            </div>
+            <div class="publications-list">
+                <div class="publication-item animate-on-scroll">
+                    <h3 class="publication-title">Solving the Fokker–Planck Equation with Neural Networks: A Performance Improvement</h3>
+                    <p class="publication-authors">Hassan Dana Mazraeh, Pegah Motaharinezhad, Nafiseh Daneshian, Kourosh Parand</p>
+                    <p class="publication-venue">Analytical and Numerical Solutions for Nonlinear Equations pp. 1–11. 2024</p>
+                    <p class="publication-doi">DOI: 10.22128/ansne.2025.967.1130</p>
+                </div>
+            </div>
+        </div> -->
+    </section>
+
+    <section id="experience" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Experience</h2>
+            </div>
+            <div class="experience-simple animate-on-scroll">
+                <p>I have experience working as a teaching assistant, research assistant, and intern. For more detailed information, please refer to my CV.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="publication" class="section-padding"></section>
+        <div class="container">
             <div class="section-header" style="margin-top: 4rem;">
                 <h2 class="section-title">Publications</h2>
             </div>
@@ -358,19 +439,19 @@
             <div class="contact-links">
                 <a href="mailto:pegahmotahari@gmail.com" class="contact-link animate-on-scroll">
                     <i class="fas fa-envelope"></i>
-                    <span>pegahmotahari@gmail.com</span>
+                    <span>Email</span>
                 </a>
                 <a href="https://linkedin.com/in/pegah-mn" target="_blank" class="contact-link animate-on-scroll">
                     <i class="fab fa-linkedin"></i>
-                    <span>pegah-mn</span>
+                    <span>LinkedIn</span>
                 </a>
                 <a href="https://github.com/pegahmn" target="_blank" class="contact-link animate-on-scroll">
                     <i class="fab fa-github"></i>
-                    <span>pegahmn</span>
+                    <span>Github</span>
                 </a>
                 <a href="https://scholar.google.com/citations?user=Pegah%20Motaharinezhad" target="_blank" class="contact-link animate-on-scroll">
-                    <i class="fab fa-github"></i>
-                    <span>Pegah Motaharinezhad</span>
+                    <i class="fab fa-graduation-cap"></i>
+                    <span>Google Scholar</span>
                 </a>
             </div>
         </div>
