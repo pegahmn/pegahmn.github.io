@@ -8,7 +8,7 @@
     --light-surface: #f5f5f5;
     --light-border: #e0e0e0;
     --light-shadow: rgba(0, 0, 0, 0.1);
-    
+
     /* Dark theme variables */
     --dark-bg: #121212;
     --dark-text: #f5f5f5;
@@ -17,7 +17,7 @@
     --dark-surface: #1e1e1e;
     --dark-border: #333333;
     --dark-shadow: rgba(0, 0, 0, 0.3);
-    
+
     /* Default to light theme */
     --bg-color: var(--light-bg);
     --text-color: var(--light-text);
@@ -26,16 +26,16 @@
     --surface-color: var(--light-surface);
     --border-color: var(--light-border);
     --shadow-color: var(--light-shadow);
-    
-    /* Typography Variables - Updated with more academic fonts */
-    --heading-font: 'Spectral', 'Baskerville', Georgia, serif;
-    --body-font: 'Libre Baskerville', 'Palatino Linotype', 'Book Antiqua', serif;
+
+    /* Typography Variables - Updated for Calibri-like feel */
+    --heading-font: 'Open Sans', sans-serif;
+    --body-font: 'Open Sans', sans-serif;
     --line-height-body: 1.7;
     --line-height-heading: 1.3;
     --font-size-base: 17px;
     --font-size-h1: 2.75rem;
     --font-size-h2: 2rem;
-    --font-size-h3: 1.5rem;
+    --font-h3: 1.5rem;
     --font-size-h4: 1.25rem;
     --font-size-small: 0.9rem;
     --font-weight-normal: 400;
@@ -44,7 +44,7 @@
     --letter-spacing-tight: -0.01em;
     --letter-spacing-normal: 0;
     --letter-spacing-wide: 0.02em;
-    
+
     /* Width Variables - Increased for wider page */
     --max-width: 1100px;
     --content-width: 900px;
