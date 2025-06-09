@@ -8,6 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'Enhancing Biomedical Relation Extraction',
             subtitle: "(Bachelor's Project)",
             summary: 'A deep learning pipeline designed to read and understand complex biomedical literature to automatically identify interactions between different drugs.',
+            contributions: [
+                'Engineered a complete NLP pipeline using a fine-tuned BERT model on the DDI Extraction 2013 dataset.',
+                'Implemented a two-stage process, beginning with highly accurate Drug Name Entity Recognition (DNER).',
+                'Developed a classification model that takes pairs of identified drug entities and categorizes their interaction type (e.g., mechanism, effect, advise).',
+            ],
             techStack: ['Python', 'PyTorch', 'Hugging Face Transformers', 'NLP'],
             links: {}
         },
@@ -17,6 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
             category: 'LLMs & Search',
             title: 'LLM-Aware Search and Ranking',
             summary: 'An intelligent search system that goes beyond keywords to understand the contextual meaning of queries, built to provide better information for Large Language Models.',
+            contributions: [
+                'Designed and built an end-to-end semantic search pipeline using sentence-embedding models to transform text into rich vector representations.',
+                'Leveraged state-of-the-art models from the Sentence-Transformers library to capture nuanced contextual information.',
+                'Implemented an efficient K-Nearest Neighbors (KNN) ranking algorithm to retrieve the most semantically similar documents from a vector database.',
+            ],
             techStack: ['Python', 'Sentence-Transformers', 'RAG', 'LLM'],
             links: { github: 'https://github.com/pegahmn/Information-Retrieval-Fall-2023' }
         },
@@ -26,6 +36,11 @@ document.addEventListener('DOMContentLoaded', () => {
             category: 'Computer Vision',
             title: 'Comparative Analysis of Image Classifiers',
             summary: 'An investigative project that benchmarks classical machine learning against modern deep learning for an image classification task with a limited dataset.',
+            contributions: [
+                'Implemented a classical ML pipeline using K-means clustering for unsupervised feature extraction, with a Random Forest model for classification.',
+                'Developed a deep learning alternative by fine-tuning a pre-trained Convolutional Neural Network (CNN), applying the principle of transfer learning.',
+                'Conducted a comparative analysis of the results, evaluating accuracy, precision, and recall of each model to determine the most effective strategy.',
+            ],
             techStack: ['Python', 'Scikit-learn', 'PyTorch', 'TensorFlow', 'OpenCV'],
             links: {}
         },
@@ -35,6 +50,10 @@ document.addEventListener('DOMContentLoaded', () => {
             category: 'AI & Algorithms',
             title: 'AI-Driven Othello Game',
             summary: 'A strategic game-playing AI that uses classical search algorithms and advanced heuristics to compete effectively in the board game Othello.',
+            contributions: [
+                'Developed a robust game engine and an AI agent using the Minimax algorithm with alpha-beta pruning to drastically reduce the search space.',
+                'Engineered advanced heuristics and optimizations, including dynamic search depth and Transposition Tables to improve performance.',
+            ],
             techStack: ['Python', 'Algorithms'],
             links: {}
         },
@@ -44,6 +63,11 @@ document.addEventListener('DOMContentLoaded', () => {
             category: 'Data Engineering',
             title: 'Amazon Product Crawler and Indexer',
             summary: 'An automated system for scraping product data from Amazon, indexing it for search, and visualizing the results in a custom dashboard.',
+            contributions: [
+                'Developed a robust web scraper using Selenium to navigate dynamic web pages and extract structured product data.',
+                'Designed an optimized schema and indexed the scraped data into an Elasticsearch cluster, making it instantly searchable.',
+                'Built interactive Kibana dashboards to visualize key metrics and trends from the collected product data.',
+            ],
             techStack: ['Python', 'Selenium', 'Elasticsearch', 'Kibana'],
             links: { github: 'https://github.com/pegahmn/Information-Retrieval-Fall-2023' }
         },
@@ -53,6 +77,11 @@ document.addEventListener('DOMContentLoaded', () => {
             category: 'Software Engineering',
             title: 'FTP Server with Secure Login',
             summary: 'A custom-built File Transfer Protocol (FTP) server that implements secure user authentication, encrypted file transfer, and multi-client handling.',
+            contributions: [
+                'Engineered a multi-threaded server architecture to handle simultaneous connections from multiple clients efficiently.',
+                'Implemented a secure login system and integrated SSL/TLS to encrypt all data transmissions.',
+                'Developed core FTP functionalities, including file upload, download, and directory synchronization.',
+            ],
             techStack: ['Python', 'Socket', 'SSL', 'Networking'],
             links: { github: 'https://github.com/ehsanhosseini1380/ftp-socket' }
         },
@@ -62,6 +91,10 @@ document.addEventListener('DOMContentLoaded', () => {
             category: 'Information Retrieval',
             title: 'Multilingual Search Engine',
             summary: 'A foundational Information Retrieval (IR) system built from scratch to handle queries in both English and Persian.',
+            contributions: [
+                'Built a complete IR pipeline, including custom tokenizers and text processors for both English and Persian datasets.',
+                'Implemented two classical ranking algorithms, TF-IDF and Jaccard similarity, to score and rank document relevance.',
+            ],
             techStack: ['Python', 'NLTK', 'Information Retrieval'],
             links: { github: 'https://github.com/pegahmn/Information-Retrieval-Fall-2023' }
         },
@@ -71,6 +104,10 @@ document.addEventListener('DOMContentLoaded', () => {
             category: 'Machine Learning',
             title: 'Machine Learning Model Implementations',
             summary: 'A library of core machine learning algorithms implemented from scratch without relying on high-level frameworks like Scikit-learn.',
+            contributions: [
+                'Implemented a suite of classification models including Decision Trees, Logistic Regression, LDA, and KNN.',
+                'Coded and visualized the process of gradient descent for optimization and applied PCA for dimensionality reduction.',
+            ],
             techStack: ['Python', 'NumPy', 'Pandas', 'Matplotlib'],
             links: {}
         },
@@ -80,6 +117,11 @@ document.addEventListener('DOMContentLoaded', () => {
             category: 'AI & Algorithms',
             title: 'Constraint Satisfaction Problem Solver',
             summary: 'A general-purpose solver for Constraint Satisfaction Problems, implementing several key algorithms for finding valid solutions.',
+            contributions: [
+                'Modeled a classic CSP and implemented a Backtracking search algorithm as the baseline solver.',
+                'Incorporated several powerful heuristics to improve search efficiency, including MRV and LCV.',
+                'Implemented inference-based techniques like Forward Checking and the AC-3 algorithm for arc consistency.',
+            ],
             techStack: ['Python', 'Algorithms'],
             links: {}
         },
@@ -89,6 +131,11 @@ document.addEventListener('DOMContentLoaded', () => {
             category: 'Computer Science Foundations',
             title: 'Java-Based Compiler for the Dust Language',
             summary: 'A complete compiler built in Java for a custom-designed programming language named "Dust," covering the initial stages of the compilation process.',
+            contributions: [
+                'Designed the syntax and grammar for a new, simple programming language called "Dust."',
+                'Implemented a lexical analyzer (lexer/scanner) to convert raw source code into a stream of tokens.',
+                'Built a syntax parser that takes the token stream and constructs a parse tree to validate the program\'s grammatical structure.',
+            ],
             techStack: ['Java', 'Compilers'],
             links: { github: 'https://github.com/ehsanhosseini1380/DustCompiler' }
         },
@@ -98,6 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
             category: 'Generative AI',
             title: 'Conversational AI Chatbot',
             summary: 'Developing an intelligent chatbot using Large Language Models to handle complex user queries and maintain context over extended conversations.',
+            contributions: [],
             techStack: ['Python', 'LLM', 'FastAPI'],
             links: {}
         }
@@ -164,12 +212,26 @@ document.addEventListener('DOMContentLoaded', () => {
             if (project.links.thesis) {
                 thesisLink = `<a href="${project.links.thesis}" target="_blank">Read Thesis</a>`;
             }
-            
+
+            let contributionsHTML = '';
+            if (project.contributions && project.contributions.length > 0) {
+                contributionsHTML = `
+                    <div class="contribution-details">
+                        <h4 class="subsection-title">Key Contributions</h4>
+                        <ul class="contribution-list">
+                            ${project.contributions.map(c => `<li>${c}</li>`).join('')}
+                        </ul>
+                    </div>
+                    <button class="contribution-toggle">Read More...</button>
+                `;
+            }
+
             item.innerHTML = `
                 <div class="project-item-content">
                     <p class="project-item-category">${project.category}</p>
                     <h3 class="project-item-title">${project.title} ${project.subtitle || ''}</h3>
                     <p class="project-item-summary">${project.summary}</p>
+                    ${contributionsHTML}
                 </div>
                 <div class="project-item-meta">
                     <div class="project-item-tags">
@@ -192,12 +254,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (project.links.github) {
                     githubLink = `<a href="${project.links.github}" target="_blank">View on GitHub</a>`;
                 }
+                
+                let contributionsHTML = '';
+                if (project.contributions && project.contributions.length > 0) {
+                    contributionsHTML = `
+                        <h3 class="subsection-title">Key Contributions</h3>
+                        <ul class="contribution-list">
+                            ${project.contributions.map(c => `<li>${c}</li>`).join('')}
+                        </ul>
+                    `;
+                }
+                
                 ongoingHTML += `
                     <div class="project-item">
                         <div class="project-item-content">
                             <p class="project-item-category">${project.category}</p>
                             <h3 class="project-item-title">${project.title}</h3>
                             <p class="project-item-summary">${project.summary}</p>
+                            ${contributionsHTML}
                         </div>
                         <div class="project-item-meta">
                             <div class="project-item-tags">
