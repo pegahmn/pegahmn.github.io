@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
             status: 'completed',
             category: 'Bioinformatics & NLP',
             title: 'Enhancing Biomedical Relation Extraction',
-            subtitle: "(Bachelor's Thesis)",
+            subtitle: "(Bachelor's Project)",
             summary: 'A deep learning pipeline designed to read and understand complex biomedical literature to automatically identify interactions between different drugs.',
             techStack: ['Python', 'PyTorch', 'Hugging Face Transformers', 'NLP'],
             links: {}
