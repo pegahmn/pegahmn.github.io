@@ -6,7 +6,7 @@
     <title>Pegah Motaharinezhad - AI Research Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
     <header>
@@ -39,9 +39,8 @@
     <section id="hero">
         <div class="container">
             <h1>Pegah Motaharinezhad</h1>
-            <!-- <p class="subtitle">Computer Science Graduate & AI Researcher</p> -->
             <div class="hero-buttons">
-                <a href="Pegah_CV.pdf" class="btn primary-btn" id="cv-download">Download CV</a>
+                <a href="./Pegah_CV.pdf" class="btn primary-btn" id="cv-download">Download CV</a>
                 <a href="#contact" class="btn secondary-btn">Contact Me</a>
             </div>
         </div>
@@ -65,7 +64,6 @@
                 <h2 class="section-title">Research Interests</h2>
             </div>
             <div class="research-grid">
-                <!-- Research Items from your original site will be here -->
                 <div class="research-item">
                     <div class="research-icon"><i class="fas fa-comment-alt"></i></div>
                     <h3>Natural Language Processing</h3>
@@ -101,16 +99,19 @@
     </section>
 
     <section id="projects">
-        <div class="container">
+        <div class="container content-container">
             <div class="section-header">
                 <h2 class="section-title">Interactive Project Portfolio</h2>
-                <p>Click a tag to filter projects by research area or technology.</p>
+                <p>Click a tag to filter completed projects by research area or technology.</p>
             </div>
             <div id="filters-container" class="filters-container">
                 <!-- Filters will be injected by script.js -->
             </div>
-            <div id="project-grid" class="projects-grid">
+            <div id="project-list" class="projects-list">
                 <!-- Projects will be injected by script.js -->
+            </div>
+            <div id="ongoing-projects-container">
+                <!-- Ongoing projects will be injected here -->
             </div>
         </div>
     </section>
@@ -118,20 +119,15 @@
     <section id="education">
         <div class="container content-container">
             <div class="section-header">
-                <h2 class="section-title">Credentials</h2>
+                <h2 class="section-title">Education</h2>
             </div>
             
-            <h3 class="subsection-title">Education</h3>
             <div class="education-list">
                 <div class="education-entry">
                     <div class="education-years">Sep. 2019 - Sep. 2024</div>
                     <div class="education-details">
                         <h3>B.S. in Computer Science</h3>
                         <h4>Ferdowsi University of Mashhad (FUM), Iran</h4>
-                        <ul>
-                            <li><strong>Bachelor's Project:</strong> "Enhancing Biomedical Relation Extraction: A BERT-Based Approach to Drug-Drug Interaction Detection"</li>
-                            <!-- <li><strong>Notable Courses:</strong> Artificial Intelligence, Fundamentals of Computational Intelligence, Data Mining, Fundamentals of Data Retrieval Web Searching, Data Structure and Algorithms, Algorithms Design and Analysis, Principles of Software Design, Linear Optimization, Graph Theory and its Application</li> -->
-                        </ul>
                     </div>
                 </div>
                 <div class="education-entry">
@@ -148,7 +144,7 @@
     <section id="publication">
         <div class="container content-container">
             <div class="section-header">
-                <h3 class="subsection-title">Publication</h3>
+                <h2 class="section-title">Publication</h2>
             </div>
             <div class="publications-list">
                 <div class="publication-item">
@@ -164,7 +160,7 @@
     <section id="experience">
         <div class="container content-container">
             <div class="section-header">
-                <h3 class="subsection-title">Experience</h3>
+                <h2 class="section-title">Experience</h2>
             </div>
             <div class="experience-simple">
                 <p>I have experience working as a teaching assistant, research assistant, and intern. For more detailed information, please refer to my CV.</p>
@@ -214,6 +210,6 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>
