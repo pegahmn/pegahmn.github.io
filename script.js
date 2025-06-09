@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     const projectsData = [
-         {
+        {
             id: 'proj-01',
             status: 'completed',
             category: 'Bioinformatics & NLP',
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
             subtitle: "(Bachelor's Thesis)",
             summary: 'A deep learning pipeline designed to read and understand complex biomedical literature to automatically identify interactions between different drugs.',
             techStack: ['Python', 'PyTorch', 'Hugging Face Transformers', 'NLP'],
-            links: { github: 'https://github.com/pegahmn', thesis: '#' }
+            links: {}
         },
         {
             id: 'proj-02',
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'LLM-Aware Search and Ranking',
             summary: 'An intelligent search system that goes beyond keywords to understand the contextual meaning of queries, built to provide better information for Large Language Models.',
             techStack: ['Python', 'Sentence-Transformers', 'RAG', 'LLM'],
-            links: { github: 'https://github.com/pegahmn' }
+            links: { github: 'https://github.com/pegahmn/Information-Retrieval-Fall-2023' }
         },
         {
             id: 'proj-03',
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'Comparative Analysis of Image Classifiers',
             summary: 'An investigative project that benchmarks classical machine learning against modern deep learning for an image classification task with a limited dataset.',
             techStack: ['Python', 'Scikit-learn', 'PyTorch', 'TensorFlow', 'OpenCV'],
-            links: { github: 'https://github.com/pegahmn' }
+            links: {}
         },
         {
             id: 'proj-04',
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'AI-Driven Othello Game',
             summary: 'A strategic game-playing AI that uses classical search algorithms and advanced heuristics to compete effectively in the board game Othello.',
             techStack: ['Python', 'Algorithms'],
-            links: { github: 'https://github.com/pegahmn' }
+            links: {}
         },
         {
             id: 'proj-05',
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'Amazon Product Crawler and Indexer',
             summary: 'An automated system for scraping product data from Amazon, indexing it for search, and visualizing the results in a custom dashboard.',
             techStack: ['Python', 'Selenium', 'Elasticsearch', 'Kibana'],
-            links: { github: 'https://github.com/pegahmn' }
+            links: { github: 'https://github.com/pegahmn/Information-Retrieval-Fall-2023' }
         },
         {
             id: 'proj-06',
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'FTP Server with Secure Login',
             summary: 'A custom-built File Transfer Protocol (FTP) server that implements secure user authentication, encrypted file transfer, and multi-client handling.',
             techStack: ['Python', 'Socket', 'SSL', 'Networking'],
-            links: { github: 'https://github.com/pegahmn' }
+            links: { github: 'https://github.com/ehsanhosseini1380/ftp-socket' }
         },
         {
             id: 'proj-07',
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'Multilingual Search Engine',
             summary: 'A foundational Information Retrieval (IR) system built from scratch to handle queries in both English and Persian.',
             techStack: ['Python', 'NLTK', 'Information Retrieval'],
-            links: { github: 'https://github.com/pegahmn' }
+            links: { github: 'https://github.com/pegahmn/Information-Retrieval-Fall-2023' }
         },
         {
             id: 'proj-08',
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'Machine Learning Model Implementations',
             summary: 'A library of core machine learning algorithms implemented from scratch without relying on high-level frameworks like Scikit-learn.',
             techStack: ['Python', 'NumPy', 'Pandas', 'Matplotlib'],
-            links: { github: 'https://github.com/pegahmn' }
+            links: {}
         },
         {
             id: 'proj-09',
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'Constraint Satisfaction Problem Solver',
             summary: 'A general-purpose solver for Constraint Satisfaction Problems, implementing several key algorithms for finding valid solutions.',
             techStack: ['Python', 'Algorithms'],
-            links: { github: 'https://github.com/pegahmn' }
+            links: {}
         },
         {
             id: 'proj-10',
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'Java-Based Compiler for the Dust Language',
             summary: 'A complete compiler built in Java for a custom-designed programming language named "Dust," covering the initial stages of the compilation process.',
             techStack: ['Java', 'Compilers'],
-            links: { github: 'https://github.com/pegahmn' }
+            links: { github: 'https://github.com/ehsanhosseini1380/DustCompiler' }
         },
         {
             id: 'proj-11',
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'Conversational AI Chatbot',
             summary: 'Developing an intelligent chatbot using Large Language Models to handle complex user queries and maintain context over extended conversations.',
             techStack: ['Python', 'LLM', 'FastAPI'],
-            links: { github: 'https://github.com/pegahmn' }
+            links: {}
         }
     ];
 
@@ -112,6 +112,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const geminiGenerateBtn = document.getElementById('gemini-generate-btn');
     const geminiResultContainer = document.getElementById('gemini-result-container');
     const researchInterestInput = document.getElementById('research-interest-input');
+    const copyEmailBtn = document.getElementById('copy-email-btn');
+    const copyFeedback = document.getElementById('copy-feedback');
+
 
     let activeFilter = 'All';
     let currentProjectId = null;
@@ -136,11 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        applyTheme(savedTheme);
-    } else {
-        applyTheme('light');
-    }
+    applyTheme(savedTheme || 'light');
 
     function renderProjects() {
         projectList.innerHTML = '';
@@ -156,9 +155,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const item = document.createElement('div');
             item.className = 'project-item';
             
-            let linksHTML = '';
-            if(project.links.github) linksHTML += `<a href="${project.links.github}" target="_blank">View on GitHub</a>`;
-            if(project.links.thesis) linksHTML += `<a href="${project.links.thesis}" target="_blank">Read Thesis</a>`;
+            let githubLink = '';
+            if (project.links.github) {
+                githubLink = `<a href="${project.links.github}" target="_blank">View on GitHub</a>`;
+            }
+
+            let thesisLink = '';
+            if (project.links.thesis) {
+                thesisLink = `<a href="${project.links.thesis}" target="_blank">Read Thesis</a>`;
+            }
             
             item.innerHTML = `
                 <div class="project-item-content">
@@ -171,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         ${project.techStack.map(tech => `<span>${tech}</span>`).join('')}
                     </div>
                     <div class="project-item-links">
-                        <div>${linksHTML}</div>
+                        <div>${githubLink} ${thesisLink}</div>
                         <button class="gemini-btn" data-project-id="${project.id}">✨ Connections</button>
                     </div>
                 </div>
@@ -183,6 +188,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (ongoingProjects.length > 0) {
             let ongoingHTML = '<h3 class="subsection-title">Ongoing Research & Development</h3>';
             ongoingProjects.forEach(project => {
+                let githubLink = '';
+                if (project.links.github) {
+                    githubLink = `<a href="${project.links.github}" target="_blank">View on GitHub</a>`;
+                }
                 ongoingHTML += `
                     <div class="project-item">
                         <div class="project-item-content">
@@ -191,8 +200,11 @@ document.addEventListener('DOMContentLoaded', () => {
                             <p class="project-item-summary">${project.summary}</p>
                         </div>
                         <div class="project-item-meta">
-                             <div class="project-item-tags">
+                            <div class="project-item-tags">
                                 ${project.techStack.map(tech => `<span>${tech}</span>`).join('')}
+                            </div>
+                            <div class="project-item-links" style="margin-top: 1rem;">
+                                <div>${githubLink}</div>
                             </div>
                         </div>
                     </div>
@@ -233,8 +245,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     document.addEventListener('click', (e) => {
-        if (e.target.classList.contains('gemini-btn')) {
-            currentProjectId = e.target.dataset.projectId;
+        if (e.target.closest('.gemini-btn')) {
+            currentProjectId = e.target.closest('.gemini-btn').dataset.projectId;
             openModal();
         }
     });
@@ -296,6 +308,21 @@ document.addEventListener('DOMContentLoaded', () => {
             geminiGenerateBtn.disabled = false;
             geminiGenerateBtn.innerHTML = 'Generate';
         }
+    });
+
+    copyEmailBtn.addEventListener('click', () => {
+        const email = "pegahmotahari@gmail.com";
+        const tempTextArea = document.createElement('textarea');
+        tempTextArea.value = email;
+        document.body.appendChild(tempTextArea);
+        tempTextArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempTextArea);
+
+        copyFeedback.classList.add('visible');
+        setTimeout(() => {
+            copyFeedback.classList.remove('visible');
+        }, 2000);
     });
 
     const navLinks = document.querySelectorAll('.nav-links a');

@@ -175,7 +175,13 @@
                 <p>I am currently seeking opportunities for master's or PhD positions. If you are a professor or researcher interested in my profile, please feel free to reach out.</p>
             </div>
             <div class="contact-links">
-                <a href="mailto:pegahmotahari@gmail.com" class="contact-link"><i class="fas fa-envelope"></i><span>Email</span></a>
+                <div class="contact-link-wrapper">
+                    <a href="mailto:pegahmotahari@gmail.com" class="contact-link"><i class="fas fa-envelope"></i><span>Email</span></a>
+                    <button id="copy-email-btn" class="copy-btn" aria-label="Copy email address">
+                        <i class="far fa-copy"></i>
+                    </button>
+                    <span id="copy-feedback" class="copy-feedback">Copied!</span>
+                </div>
                 <a href="https://linkedin.com/in/pegah-mn" target="_blank" class="contact-link"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
                 <a href="https://github.com/pegahmn" target="_blank" class="contact-link"><i class="fab fa-github"></i><span>GitHub</span></a>
                 <a href="https://scholar.google.ca/citations?hl=en&user=B1vqBu0AAAAJ" target="_blank" class="contact-link"><i class="fas fa-graduation-cap"></i><span>Google Scholar</span></a>
@@ -204,6 +210,7 @@
                 </div>
                 <button id="gemini-generate-btn">Generate</button>
                 <div id="gemini-result-container" class="gemini-result-container">
+                    <!-- Results will be displayed here -->
                 </div>
             </div>
         </div>

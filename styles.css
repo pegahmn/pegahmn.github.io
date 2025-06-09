@@ -9,6 +9,7 @@
     --light-accent-hover: #4338ca;
     --light-border: #e9ecef;
     --light-shadow: rgba(0, 0, 0, 0.04);
+    --light-success: #198754;
 
     /* Dark Theme */
     --dark-bg: #111827;
@@ -19,6 +20,7 @@
     --dark-accent-hover: #6366f1;
     --dark-border: #374151;
     --dark-shadow: rgba(0, 0, 0, 0.2);
+    --dark-success: #20c997;
 
     /* Default to light theme */
     --bg-color: var(--light-bg);
@@ -29,6 +31,7 @@
     --accent-hover-color: var(--light-accent-hover);
     --border-color: var(--light-border);
     --shadow-color: var(--light-shadow);
+    --success-color: var(--light-success);
 
     --heading-font: 'Inter', sans-serif;
     --body-font: 'Inter', sans-serif;
@@ -43,6 +46,7 @@ body.dark-theme {
     --accent-hover-color: var(--dark-accent-hover);
     --border-color: var(--dark-border);
     --shadow-color: var(--dark-shadow);
+    --success-color: var(--dark-success);
 }
 
 /* Base Styles */
@@ -166,8 +170,13 @@ section:last-of-type { border-bottom: none; }
 .publication-doi { font-weight: 600; color: var(--accent-color); }
 .contact-section { background-color: var(--surface-color); }
 .contact-links { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-top: 2rem; }
+.contact-link-wrapper { position: relative; display: flex; align-items: center; background-color: var(--surface-color); padding: 0.5rem 1rem; border-radius: 8px; border: 1px solid var(--border-color); }
 .contact-link { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; font-size: 1.1rem; color: var(--text-color); font-weight: 500; }
 .contact-link i { font-size: 1.5rem; color: var(--accent-color); }
+.copy-btn { background: none; border: none; font-size: 1rem; color: var(--text-secondary-color); cursor: pointer; margin-left: 0.75rem; padding: 0.25rem; }
+.copy-feedback { position: absolute; bottom: 125%; left: 50%; transform: translateX(-50%); background-color: var(--success-color); color: white; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.8rem; opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s; white-space: nowrap; }
+.copy-feedback.visible { opacity: 1; visibility: visible; }
+
 
 /* Footer */
 footer { padding: 2.5rem 0; text-align: center; color: var(--text-secondary-color); }
