@@ -119,11 +119,34 @@ section:last-of-type { border-bottom: none; }
 .about-content p:not(:last-child) { margin-bottom: 1rem; }
 
 /* Research Interests */
-.research-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-.research-item { background-color: var(--surface-color); padding: 2rem; border-radius: 12px; border: 1px solid var(--border-color); }
-.research-icon { font-size: 2rem; color: var(--accent-color); margin-bottom: 1rem; }
-.research-item h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; }
-.research-item p { color: var(--text-secondary-color); line-height: 1.6; }
+.research-interests-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+}
+.research-category h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+.research-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+.research-tag {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
 
 /* Interactive Projects - List View */
 .filters-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; margin-bottom: 3rem; }
@@ -154,6 +177,7 @@ section:last-of-type { border-bottom: none; }
 .contribution-toggle { font-size: 0.9rem; font-weight: 600; color: var(--accent-color); background: none; border: none; cursor: pointer; padding: 0.25rem 0; margin-top: 0.75rem; }
 .contribution-details { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-in-out, margin-top 0.5s ease-in-out; }
 .contribution-details.visible { max-height: 500px; margin-top: 1rem; }
+.subsection-title-education,
 .contribution-details .subsection-title { font-size: 1rem; font-weight: 600; color: var(--text-color); border: none; margin: 0 0 0.5rem 0; padding: 0; text-align: left;}
 .contribution-list { list-style-position: outside; color: var(--text-secondary-color); margin-left: 1.5rem; font-size: 0.95rem;}
 .contribution-list li { margin-bottom: 0.5rem; }
@@ -213,4 +237,5 @@ footer { padding: 2.5rem 0; text-align: center; color: var(--text-secondary-colo
     .education-years, .project-item-meta { text-align: left; }
     .project-item-tags, .project-item-links { justify-content: flex-start; }
     .project-item-meta { margin-top: 1rem; }
+    .research-interests-container { grid-template-columns: 1fr; }
 }
