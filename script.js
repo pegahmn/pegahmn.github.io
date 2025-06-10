@@ -120,10 +120,34 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ];
 
+    const researchInterests = [
+        {
+            category: 'Natural Language Processing & LLMs',
+            interests: ['NLP', 'LLMs', 'Transformers', 'Chatbots', 'RAG', 'Information Retrieval', 'Graph RAG', 'Multimodality']
+        },
+        {
+            category: 'Deep Learning Paradigms',
+            interests: ['Deep Learning', 'Generalization', 'Few-shot & Zero-shot Learning', 'Self-Supervised Learning']
+        },
+        {
+            category: 'Reinforcement Learning & AI Agents',
+            interests: ['Reinforcement Learning', 'Deep Reinforcement Learning', 'AI Agents', 'Decision Making']
+        },
+        {
+            category: 'Computer Vision',
+            interests: ['Object Detection', 'Image Classification', 'Image Segmentation', 'Complex Event Detection', 'Generative Models for Vision']
+        },
+        {
+            category: 'Applied AI & Human-Centered Systems',
+            interests: ['Computational Biology', 'Bioinformatics', 'Human-Computer Interaction (HCI)', 'Software Engineering']
+        }
+    ];
+
     const themeSwitch = document.getElementById('theme-switch');
     const projectList = document.getElementById('project-list');
     const filtersContainer = document.getElementById('filters-container');
     const ongoingContainer = document.getElementById('ongoing-projects-container');
+    const researchContainer = document.getElementById('research-interests-container');
     const geminiModalOverlay = document.getElementById('gemini-modal-overlay');
     const geminiModalClose = document.getElementById('gemini-modal-close');
     const geminiGenerateBtn = document.getElementById('gemini-generate-btn');
@@ -156,6 +180,17 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const savedTheme = localStorage.getItem('theme');
     applyTheme(savedTheme || 'light');
+    
+    function renderResearchInterests() {
+        researchContainer.innerHTML = researchInterests.map(cat => `
+            <div class="research-category">
+                <h3>${cat.category}</h3>
+                <div class="research-tags">
+                    ${cat.interests.map(interest => `<span class="research-tag">${interest}</span>`).join('')}
+                </div>
+            </div>
+        `).join('');
+    }
 
     function renderProjects() {
         projectList.innerHTML = '';
@@ -303,8 +338,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         if (toggleBtn) {
             const details = toggleBtn.previousElementSibling;
-            const isVisible = details.classList.toggle('visible');
-            toggleBtn.textContent = isVisible ? 'Read Less' : 'Read More...';
+            if (details && details.classList.contains('contribution-details')) {
+                const isVisible = details.classList.toggle('visible');
+                toggleBtn.textContent = isVisible ? 'Read Less' : 'Read More...';
+            }
         }
     });
     
@@ -404,4 +441,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setupFilters();
     renderProjects();
+    renderResearchInterests();
 });
