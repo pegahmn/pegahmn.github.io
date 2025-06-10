@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 'Implemented an efficient K-Nearest Neighbors (KNN) ranking algorithm to retrieve the most semantically similar documents from a vector database.',
             ],
             techStack: ['Python', 'Sentence-Transformers', 'RAG', 'LLM'],
-            links: { github: 'https://github.com/pegahmn/LLM-Aware-Search' }
+            links: { github: 'https://github.com/pegahmn/Information-Retrieval-Fall-2023'}
         },
         {
             id: 'proj-03', status: 'completed', category: 'Data Engineering', title: 'Amazon Product Crawler and Indexer',
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 'Built interactive Kibana dashboards to visualize key metrics and trends from the collected product data.',
             ],
             techStack: ['Python', 'Selenium', 'Elasticsearch', 'Kibana'],
-            links: { }
+            links: { github: 'https://github.com/pegahmn/Information-Retrieval-Fall-2023' }
         },
         {
             id: 'proj-04', status: 'completed', category: 'Information Retrieval', title: 'Multilingual Search Engine',
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 'Engineered advanced heuristics and optimizations, including dynamic search depth and Transposition Tables to improve performance.',
             ],
             techStack: ['Python', 'Algorithms'],
-            links: { github: 'https://github.com/pegahmn/Othello-AI-Player' }
+            links: {}
         },
         {
             id: 'proj-08', status: 'completed', category: 'AI & Algorithms', title: 'Constraint Satisfaction Problem Solver',
@@ -183,10 +183,10 @@ document.addEventListener('DOMContentLoaded', () => {
             
             let contributionsHTML = '';
             if (project.contributions && project.contributions.length > 0) {
-                 contributionsHTML = `
+                contributionsHTML = `
                     <div class="contribution-details">
-                         <h4 class="subsection-title">Key Contributions</h4>
-                         <ul class="contribution-list">
+                        <h4 class="subsection-title">Key Contributions</h4>
+                        <ul class="contribution-list">
                             ${project.contributions.map(c => `<li>${c}</li>`).join('')}
                         </ul>
                     </div>
@@ -221,9 +221,9 @@ document.addEventListener('DOMContentLoaded', () => {
             let ongoingHTML = '<h3 class="subsection-title">Ongoing Research & Development</h3>';
             ongoingProjects.forEach(project => {
                 let githubLink = '';
-                 if (project.links.github) {
+                if (project.links.github) {
                     githubLink = `<a href="${project.links.github}" target="_blank">View on GitHub</a>`;
-                 }
+                }
 
                 let contributionsHTML = '';
                 if (project.contributions && project.contributions.length > 0) {
@@ -240,7 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 ongoingHTML += `
                     <div class="project-item">
-                       <div class="project-item-main">
+                        <div class="project-item-main">
                             <div class="project-item-content">
                                 <p class="project-item-category">${project.category}</p>
                                 <h3 class="project-item-title">${project.title}</h3>
@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 ${contributionsHTML}
                             </div>
                             <div class="project-item-meta">
-                                 <div class="project-item-tags">
+                                <div class="project-item-tags">
                                     ${project.techStack.map(tech => `<span>${tech}</span>`).join('')}
                                 </div>
                                 <div class="project-item-links" style="margin-top: 1rem;">
