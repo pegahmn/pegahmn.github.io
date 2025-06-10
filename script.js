@@ -120,10 +120,34 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ];
 
+    const researchInterests = [
+        {
+            category: 'Natural Language Processing & LLMs',
+            interests: ['NLP', 'LLMs', 'Transformers', 'Chatbots', 'RAG', 'Information Retrieval', 'Graph RAG']
+        },
+        {
+            category: 'Deep Learning Paradigms',
+            interests: ['Deep Learning', 'Generalization', 'Few-shot Learning', 'Zero-shot Learning']
+        },
+        {
+            category: 'Core Machine Learning',
+            interests: ['Machine Learning', 'Reinforcement Learning', 'Deep Reinforcement Learning']
+        },
+        {
+            category: 'AI Applications & Systems',
+            interests: ['AI Agents', 'Generative AI', 'Bioinformatics', 'Software Engineering', 'HCI']
+        },
+        {
+            category: 'Computer Vision',
+            interests: ['Object Detection', 'Image Classification', 'Image Segmentation', 'Complex Event Detection']
+        }
+    ];
+
     const themeSwitch = document.getElementById('theme-switch');
     const projectList = document.getElementById('project-list');
     const filtersContainer = document.getElementById('filters-container');
     const ongoingContainer = document.getElementById('ongoing-projects-container');
+    const researchContainer = document.getElementById('research-interests-container');
     const geminiModalOverlay = document.getElementById('gemini-modal-overlay');
     const geminiModalClose = document.getElementById('gemini-modal-close');
     const geminiGenerateBtn = document.getElementById('gemini-generate-btn');
@@ -156,6 +180,17 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const savedTheme = localStorage.getItem('theme');
     applyTheme(savedTheme || 'light');
+    
+    function renderResearchInterests() {
+        researchContainer.innerHTML = researchInterests.map(cat => `
+            <div class="research-category">
+                <h3>${cat.category}</h3>
+                <div class="research-tags">
+                    ${cat.interests.map(interest => `<span class="research-tag">${interest}</span>`).join('')}
+                </div>
+            </div>
+        `).join('');
+    }
 
     function renderProjects() {
         projectList.innerHTML = '';
@@ -183,10 +218,10 @@ document.addEventListener('DOMContentLoaded', () => {
             
             let contributionsHTML = '';
             if (project.contributions && project.contributions.length > 0) {
-                contributionsHTML = `
+                 contributionsHTML = `
                     <div class="contribution-details">
-                        <h4 class="subsection-title">Key Contributions</h4>
-                        <ul class="contribution-list">
+                         <h4 class="subsection-title">Key Contributions</h4>
+                         <ul class="contribution-list">
                             ${project.contributions.map(c => `<li>${c}</li>`).join('')}
                         </ul>
                     </div>
@@ -221,9 +256,9 @@ document.addEventListener('DOMContentLoaded', () => {
             let ongoingHTML = '<h3 class="subsection-title">Ongoing Research & Development</h3>';
             ongoingProjects.forEach(project => {
                 let githubLink = '';
-                if (project.links.github) {
+                 if (project.links.github) {
                     githubLink = `<a href="${project.links.github}" target="_blank">View on GitHub</a>`;
-                }
+                 }
 
                 let contributionsHTML = '';
                 if (project.contributions && project.contributions.length > 0) {
@@ -240,7 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 ongoingHTML += `
                     <div class="project-item">
-                        <div class="project-item-main">
+                       <div class="project-item-main">
                             <div class="project-item-content">
                                 <p class="project-item-category">${project.category}</p>
                                 <h3 class="project-item-title">${project.title}</h3>
@@ -248,7 +283,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 ${contributionsHTML}
                             </div>
                             <div class="project-item-meta">
-                                <div class="project-item-tags">
+                                 <div class="project-item-tags">
                                     ${project.techStack.map(tech => `<span>${tech}</span>`).join('')}
                                 </div>
                                 <div class="project-item-links" style="margin-top: 1rem;">
@@ -303,8 +338,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         if (toggleBtn) {
             const details = toggleBtn.previousElementSibling;
-            const isVisible = details.classList.toggle('visible');
-            toggleBtn.textContent = isVisible ? 'Read Less' : 'Read More...';
+            if (details && details.classList.contains('contribution-details')) {
+                const isVisible = details.classList.toggle('visible');
+                toggleBtn.textContent = isVisible ? 'Read Less' : 'Read More...';
+            }
         }
     });
     
@@ -312,6 +349,16 @@ document.addEventListener('DOMContentLoaded', () => {
     geminiModalOverlay.addEventListener('click', (e) => {
         if (e.target === geminiModalOverlay) {
             closeModal();
+        }
+    });
+    
+    document.querySelector('.education-details').addEventListener('click', (e) => {
+        if(e.target.classList.contains('contribution-toggle')) {
+            const details = e.target.previousElementSibling;
+            if (details && details.classList.contains('contribution-details')) {
+                const isVisible = details.classList.toggle('visible');
+                e.target.textContent = isVisible ? 'Hide Courses' : 'View Notable Courses...';
+            }
         }
     });
 
@@ -404,4 +451,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setupFilters();
     renderProjects();
+    renderResearchInterests();
 });
