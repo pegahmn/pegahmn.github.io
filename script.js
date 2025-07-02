@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
             techStack: ['Python', 'Socket', 'SSL', 'Networking'],
             links: { github: 'https://github.com/ehsanhosseini1380/ftp-socket' }
         },
-            {
+        {
             id: 'proj-11', status: 'ongoing', category: 'Generative AI', title: 'Conversational AI Chatbot',
             context: 'This ongoing research project focuses on developing an intelligent chatbot using Large Language Models to handle complex user queries and maintain context over extended conversations.',
             contributions: [
@@ -117,7 +117,24 @@ document.addEventListener('DOMContentLoaded', () => {
             ],
             techStack: ['Python', 'LLM', 'FastAPI'],
             links: {}
-        }
+        },
+        {
+            id: 'proj-12',
+            status: 'ongoing', // Set as 'ongoing' for now
+            category: 'NLP & LLMs',
+            title: 'KG-Gen: Knowledge Graph Generator',
+            context: 'A web application designed to extract structured knowledge graphs from unstructured text. Leverages Google Gemini Large Language Models (LLMs) for entity and relationship extraction, transforming complex information into an interactive and visually intuitive graph representation.',
+            contributions: [
+                'Developed a modular Python backend for knowledge graph extraction using LangChain and Google Gemini API.',
+                'Implemented an interactive web interface with Streamlit, supporting text area and .txt file inputs.',
+                'Designed a refactored project structure for enhanced maintainability and scalability.',
+                'Integrated Pyvis for dynamic and customizable graph visualizations.',
+                'Ensured secure handling of API keys via environment variables.'
+            ],
+            techStack: ['Python', 'Streamlit', 'LangChain', 'Google Gemini API', 'Pyvis', 'LLM', 'NLP', 'Generative AI', 'Knowledge Graph'], // Relevant keywords
+            links: { github: 'https://github.com/pegahmn/KG-Gen', live: 'https://kg-gen-app.streamlit.app/'
+            }
+    }
     ];
 
     const researchInterests = [
@@ -216,6 +233,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 thesisLink = `<a href="${project.links.thesis}" target="_blank">Read Thesis</a>`;
             }
             
+            let liveLink = '';
+            if (project.links.live && project.links.live !== '#') {
+                liveLink = `<a href="${project.links.live}" target="_blank">| Live Demo</a>`;
+            }
+
             let contributionsHTML = '';
             if (project.contributions && project.contributions.length > 0) {
                 contributionsHTML = `
@@ -242,7 +264,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             ${project.techStack.map(tech => `<span>${tech}</span>`).join('')}
                         </div>
                         <div class="project-item-links">
-                            <div>${githubLink} ${thesisLink}</div>
+                            <div>${githubLink} ${thesisLink} ${liveLink}</div>
                             <button class="gemini-btn" data-project-id="${project.id}">✨ Connections</button>
                         </div>
                     </div>
@@ -258,6 +280,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 let githubLink = '';
                 if (project.links.github) {
                     githubLink = `<a href="${project.links.github}" target="_blank">View on GitHub</a>`;
+                }
+
+                let liveLink = '';
+                if (project.links.live && project.links.live !== '#') {
+                    liveLink = `<a href="${project.links.live}" target="_blank">| Live Demo</a>`;
                 }
 
                 let contributionsHTML = '';
@@ -287,7 +314,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                     ${project.techStack.map(tech => `<span>${tech}</span>`).join('')}
                                 </div>
                                 <div class="project-item-links" style="margin-top: 1rem;">
-                                    <div>${githubLink}</div>
+                                    <div>${githubLink} ${liveLink}</div>
                                 </div>
                             </div>
                         </div>
