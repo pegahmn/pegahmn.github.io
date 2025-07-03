@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             category: 'Applied AI & Human-Centered Systems',
-            interests: ['Computational Biology', 'Bioinformatics', 'Human-Computer Interaction (HCI)', 'Software Engineering']
+            interests: ['Bioinformatics', 'Human-Computer Interaction (HCI)', 'Software Engineering']
         }
     ];
 
