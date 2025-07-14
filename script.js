@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 'proj-01', status: 'completed', category: 'Bioinformatics & NLP', title: 'Enhancing Biomedical Relation Extraction', subtitle: "(Bachelor's Thesis)",
             context: 'Identifying Drug-Drug Interactions (DDIs) is a critical and time-consuming task in pharmacology. This project aimed to automate the process by building a system that can accurately detect drug names and classify the nature of their interaction from unstructured text.',
             contributions: [
-                'Engineered a complete NLP pipeline using a fine-tuned BERT model on the DDI Extraction 2013 dataset.',
+                'Engineered a complete NLP pipeline using a fine-tuned BERT-based models on the DDI Extraction 2013 dataset.',
                 'Implemented a two-stage process, beginning with highly accurate Drug Name Entity Recognition (DNER).',
                 'Developed a classification model that takes pairs of identified drug entities and categorizes their interaction type (e.g., mechanism, effect, advise).',
             ],
